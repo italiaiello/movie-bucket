@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useDataFetch } from './hooks/useDataFetch';
 import './App.css';
 
 function App() {
+
+  const { isLoading, data, error } = useDataFetch('')
+  console.log(data)
+
+  if (!data) return <>No data</>
+
+  if (error) return <>Network error</>
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        isLoading ?
+        <h1>Loading movies...</h1>
+        :
+        <h1>Movie Bucket</h1>
+      }
+      
     </div>
   );
 }
