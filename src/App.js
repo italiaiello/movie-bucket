@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useReducer } from 'react';
 import { useDataFetch } from './hooks/useDataFetch';
 import './App.css';
 
-function App() {
+const App = () => {
 
-  const { isLoading, data, error } = useDataFetch('')
-  console.log(data)
+  const [movieSearched, setMovieSearched] = useState('')
+  const { isLoading, data, error } = useDataFetch(movieSearched)
 
   if (!data) return <>No data</>
 
