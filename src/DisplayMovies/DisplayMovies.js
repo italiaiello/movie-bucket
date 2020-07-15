@@ -13,17 +13,16 @@ const DisplayMovies = ({ data, searchField }) => {
                     data ?
                     data.map(datum => {
                         return (
-                            <article key={datum.imdbID} className="posterContainer">
+                            <article key={datum.imdbID} className={datum.Poster === 'N/A' ? 'posterContainer noPoster' : 'posterContainer'}>
                                 {
                                     datum.Poster === 'N/A' ?
-                                    <p>No Poster Available</p>
+                                    <p className="noPosterText">No Poster Available</p>
                                     :
                                     <figure className="poster">
                                         <img src={datum.Poster} alt={datum.Title} />
                                     </figure>
                                 }
-                                
-                                <p>{datum.Title}</p>
+                                <p className="movieTitle">{datum.Title}</p>
                             </article>
                         )
                     })

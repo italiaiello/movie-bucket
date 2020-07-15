@@ -15,7 +15,7 @@ export const useDataFetch = (searchField) => {
                     "method": "GET",
                     "headers": {
                         "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-                        "x-rapidapi-key": "YOUR_API_KEY_HERE"
+                        "x-rapidapi-key": "6c8249ea79msh7c7f9debac5aa52p1e22cejsn3eb193088c90"
                     }
                 })
                 const json = await response.json()

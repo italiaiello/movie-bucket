@@ -1,6 +1,9 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
+
+/* Display Movies */
 
 #displayMovies {
   display: flex;
@@ -10,6 +13,39 @@
 }
 
 .posterContainer {
-  width: 30%;
+  width: 300px;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.poster {
+  width: auto;
+  height: 300px;
+  margin: 0;
+}
+
+.noPosterText {
+  width: 100%;
+  height: 280px;
+  background-color: black;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: white;
+}
+
+.poster img {
+  width: auto;
+  height: 100%;
+}
+
+.movieTitle {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: black;
+  color: white;
 }
