@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ACTIONS } from '../App'
+import { ACTIONS } from '../../App'
 
 const SearchBar = ({ dispatch }) => {
 
@@ -17,10 +17,10 @@ const SearchBar = ({ dispatch }) => {
       }
 
     return (
-        <article>
+        <article id="searchBarContainer">
             <form onSubmit={handleSubmit}>
                 <input id="searchBar" type="text" placeholder="Search..." onChange={onSearchChange}/>
-                <button type="submit">Search</button>
+                <button id="submitButton" type="submit">Search</button>
             </form>
         </article>
     )

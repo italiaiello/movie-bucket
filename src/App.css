@@ -3,6 +3,40 @@
   min-height: 100vh;
 }
 
+/* Search Bar */
+
+#searchBarContainer {
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#searchBarContainer form {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+#searchBar {
+  flex: 4;
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+}
+
+#submitButton {
+  flex: 1;
+  height: 30px;
+  background-color: black;
+  border: none;
+  color: white;
+  outline: none;
+}
+
 /* Display Movies */
 
 #displayMovies {
@@ -41,11 +75,18 @@
   height: 100%;
 }
 
-.movieTitle {
-  width: 80%;
-  height: 50px;
+.movieTitleContainer {
+  width: 100%;
+  height: 100px;
   margin: 0 auto;
-  padding: 20px 0;
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movieTitle {
+  padding: 0 20px;
+  margin: 0;
 }

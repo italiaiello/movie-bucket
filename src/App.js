@@ -1,22 +1,26 @@
 import React, { useReducer } from 'react';
 import { useDataFetch } from './hooks/useDataFetch';
-import SearchBar from './SearchBar/SearchBar'
-import DisplayMovies from './DisplayMovies/DisplayMovies'
+import SearchBar from './components/SearchBar/SearchBar'
+import DisplayMovies from './components/DisplayMovies/DisplayMovies'
+import MovieDetailsContainer from './components/MovieDetailsContainer/MovieDetailsContainer'
 
 import './App.css';
 
 export const ACTIONS = {
   CHANGE_SEARCH_FIELD: 'searchField',
-  CHANGE_ROUTE: 'changeRoute'
+  CHANGE_ROUTE: 'changeRoute',
+  SET_MOVIE_ID: 'setMovieId'
 }
 
 const reducer = (state, action) => {
   console.log(state, action)
   switch(action.type) {
     case ACTIONS.CHANGE_SEARCH_FIELD:
-      return { searchField: action.payload.input }
+      return { ...state, searchField: action.payload.input }
     case ACTIONS.CHANGE_ROUTE:
-      return { route: action.payload.route }
+      return { ...state, route: action.payload.route }
+    case ACTIONS.SET_MOVIE_ID:
+      return { ...state, movieId: action.payload.id }
     default:
       return state
   }
@@ -24,10 +28,10 @@ const reducer = (state, action) => {
 
 const App = () => {
 
-  const [state, dispatch] = useReducer(reducer, { searchField: '', route: 'home' })
+  const [state, dispatch] = useReducer(reducer, { searchField: '', route: 'home', movieId: '' })
   const { isLoading, data, error } = useDataFetch(state.searchField)
 
-  console.log(state)
+  console.log(data)
 
   if (error) return <>Network error</>
 
@@ -37,11 +41,21 @@ const App = () => {
           isLoading ?
           <h1>Loading movies...</h1>
           :
-          <article>
-            <h1>Movie Bucket</h1>
-            <SearchBar dispatch={dispatch} />
-            <DisplayMovies data={data} searchField={state.searchField} />
-          </article>
+          (
+            state.route === 'home' ?
+            <article>
+              <h1>Movie Bucket</h1>
+              <SearchBar dispatch={dispatch} />
+              <DisplayMovies data={data} searchField={state.searchField} dispatch={dispatch}/>
+            </article>
+            :
+            (
+              state.route === 'details' &&
+              <MovieDetailsContainer movieId={state.movieId}/>
+            )
+
+          )
+          
         
       }
       
