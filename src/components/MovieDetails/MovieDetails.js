@@ -14,24 +14,6 @@ const MovieDetails = ({ movieDetails, dispatch }) => {
                 :
                 <article id="movieDetailsContainer">
                     <article id="movieDetails">
-                        <article id="movieDetailsPoster">
-                            <h1>{movieDetails.Title}</h1>
-                            <figure>
-                                <img src={movieDetails.Poster} alt={movieDetails.Title}/>
-                            </figure>
-                            <article id="ratingsContainer">
-                                {
-                                    movieDetails.Ratings.map((rating, i) => {
-                                        return (
-                                            <div key={i} className="rating">
-                                                <p>{rating.Source}</p>
-                                                <p>{rating.Value}</p>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </article>
-                        </article>
                         <article id="plotAndOtherDetailsContainer">
                             <div id="arrowContainer" onClick={() => dispatch({ type: ACTIONS.CHANGE_ROUTE, payload: { route: 'home' } })}>
                                 <div id="arrow"></div>
@@ -61,6 +43,24 @@ const MovieDetails = ({ movieDetails, dispatch }) => {
                                         <p>{`Director: ${movieDetails.Director}`}</p>
                                     </article>
                                 </article>
+                            </article>
+                        </article>
+                        <article id="movieDetailsPoster">
+                            <h1>{movieDetails.Title}</h1>
+                            <figure>
+                                <img src={movieDetails.Poster} alt={movieDetails.Title}/>
+                            </figure>
+                            <article id="ratingsContainer">
+                                {
+                                    movieDetails.Ratings.map((rating, i) => {
+                                        return (
+                                            <div key={i} className="rating">
+                                                <p>{rating.Source}</p>
+                                                <p>{rating.Value}</p>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </article>
                         </article>
                     </article>
