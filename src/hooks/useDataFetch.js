@@ -19,7 +19,6 @@ export const useDataFetch = (searchField) => {
                     }
                 })
                 const json = await response.json()
-                console.log(json.Search)
                 setData(json.Search)
             } catch(error) {
                 setError(error)

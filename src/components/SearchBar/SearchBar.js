@@ -12,6 +12,7 @@ const SearchBar = ({ dispatch }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (!search.length) return
         dispatch({ type: ACTIONS.CHANGE_SEARCH_FIELD, payload: { input: search } })
         setSearch('')
       }

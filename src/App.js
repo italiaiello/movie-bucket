@@ -31,8 +31,6 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, { searchField: '', route: 'home', movieId: '' })
   const { isLoading, data, error } = useDataFetch(state.searchField)
 
-  console.log(data)
-
   if (error) return <>Network error</>
 
   return (
@@ -51,7 +49,7 @@ const App = () => {
             :
             (
               state.route === 'details' &&
-              <MovieDetailsContainer movieId={state.movieId}/>
+              <MovieDetailsContainer movieId={state.movieId} dispatch={dispatch}/>
             )
 
           )

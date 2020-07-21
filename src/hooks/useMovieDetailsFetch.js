@@ -19,7 +19,6 @@ export const useMovieDetailsFetch = (movieId) => {
                     }
                 })
                 const json = await response.json()
-                console.log(json)
                 setMovieDetails(json)
             } catch(error) {
                 setError(error)

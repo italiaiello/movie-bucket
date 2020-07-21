@@ -64,7 +64,7 @@
 .noPosterText {
   width: 100%;
   height: 280px;
-  background-color: black;
+  background-color: #202020;
   margin: 0 auto;
   padding-top: 20px;
   color: white;
@@ -90,3 +90,124 @@
   padding: 0 20px;
   margin: 0;
 }
+
+/* Movie Details */
+
+#movieDetailsContainer {
+  min-height: 100vh;
+}
+
+#movieDetails {
+  display: flex;
+  justify-content: center;
+}
+
+#movieDetailsPoster {
+  flex: 1;
+  background-color: #202020;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#movieDetailsPoster h1 {
+  flex: 1;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#movieDetailsPoster figure {
+  margin: 0;
+  flex: 3;
+}
+
+#movieDetailsPoster figure img {
+  height: 100%;
+  width: auto;
+}
+
+#ratingsContainer {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+#ratingsContainer div {
+  padding: 20px 0;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#plotAndOtherDetailsContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#plotAndOtherDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#arrowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+}
+
+#arrow {
+  width: 5px;
+  height: 5px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#arrow, #arrowContainer p {
+  cursor: pointer;
+}
+
+#actors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.divided p {
+  flex: 1;
+  border-right: 2px solid black;
+}
+
+.divided p:last-child {
+  border-right: none;
+}
+
+#plot {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#smallDetails {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+

@@ -3,9 +3,7 @@ import MovieDetails from '../MovieDetails/MovieDetails'
 
 import { useMovieDetailsFetch } from '../../hooks/useMovieDetailsFetch'
 
-const MovieDetailsContainer = ({ movieId }) => {
-
-    console.log(movieId)
+const MovieDetailsContainer = ({ movieId, dispatch }) => {
 
     const { isLoading, movieDetails, error } = useMovieDetailsFetch(movieId)
 
@@ -17,7 +15,7 @@ const MovieDetailsContainer = ({ movieId }) => {
                 isLoading ?
                 <h1>Loading movie details...</h1>
                 :
-                <MovieDetails movieDetails={movieDetails} />
+                <MovieDetails movieDetails={movieDetails} dispatch={dispatch} />
             }
             
         </section>
