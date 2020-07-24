@@ -18,7 +18,7 @@ const DisplayMovies = ({ data, searchField, dispatch }) => {
                     data.map((datum, i) => {
                         return (
                             <article    key={datum.imdbID} 
-                                        className={datum.Poster === 'N/A' ? 'posterContainer noPoster' : 'posterContainer'}
+                                        className={datum.Poster === 'N/A' ? 'posterContainer noPoster contentHover' : 'posterContainer contentHover'}
                                         onClick={() => onMovieClick(i)}
                             >
                                 {

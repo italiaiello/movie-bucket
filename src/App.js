@@ -37,11 +37,11 @@ const App = () => {
     <div className="App">
       {
           isLoading ?
-          <h1>Loading movies...</h1>
+          <h1 className="loadingMessage">Loading movies...</h1>
           :
           (
             state.route === 'home' ?
-            <article>
+            <article id="homePage">
               <h1>Movie Bucket</h1>
               <SearchBar dispatch={dispatch} />
               <DisplayMovies data={data} searchField={state.searchField} dispatch={dispatch}/>

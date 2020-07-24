@@ -13,7 +13,7 @@ const MovieDetailsContainer = ({ movieId, dispatch }) => {
         <section id="movieDetailsContainer">
             {
                 isLoading ?
-                <h1>Loading movie details...</h1>
+                <h1 className="loadingMessage">Loading movie details...</h1>
                 :
                 <MovieDetails movieDetails={movieDetails} dispatch={dispatch} />
             }

@@ -48,14 +48,22 @@ const MovieDetails = ({ movieDetails, dispatch }) => {
                         <article id="movieDetailsPoster">
                             <h1>{movieDetails.Title}</h1>
                             <figure>
-                                <img src={movieDetails.Poster} alt={movieDetails.Title}/>
+                                {
+                                    movieDetails.Poster === 'N/A' ?
+                                    <p>No Poster Available</p>
+                                    :
+                                    <img src={movieDetails.Poster} alt={movieDetails.Title}/>
+                                }
                             </figure>
                             <article id="ratingsContainer">
                                 {
+                                    !movieDetails.Ratings.length ?
+                                    <p>No ratings available</p>
+                                    :
                                     movieDetails.Ratings.map((rating, i) => {
                                         return (
                                             <div key={i} className="rating">
-                                                <p>{rating.Source}</p>
+                                                <p className="nameOfRater">{rating.Source}</p>
                                                 <p>{rating.Value}</p>
                                             </div>
                                         )
